@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Wick"
+rootProject.name = "Orbit"
 include(":app")

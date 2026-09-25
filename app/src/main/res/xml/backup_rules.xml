@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <full-backup-content>
-    <include domain="database" path="wick.db" />
+    <include domain="database" path="orbit.db" />
 </full-backup-content>

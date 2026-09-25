@@ -1,4 +1,4 @@
-# Wick — a study companion, not a countdown app
+# Orbit — a study companion, not a countdown app
 
 Built for **Bal Bharati Hackathon 3.0** (Team Optimus Prime) from the
 "Smart Study Tracker" idea: a study timer that pauses itself when you
@@ -25,8 +25,8 @@ pipeline, and the real Android speech APIs.
   idea exactly — it doesn't silently resume; it speaks a short reminder
   and waits for you to tap or say "resume."
 - **Voice commands** — tap the mic, say "start," "pause," "status," or
-  "log a question," and Wick answers out loud. This is push-to-talk,
-  not an always-listening "Hey Wick" — see [Honest limitations](#honest-limitations-and-the-next-build)
+  "log a question," and Orbit answers out loud. This is push-to-talk,
+  not an always-listening "Hey Orbit" — see [Honest limitations](#honest-limitations-and-the-next-build)
   for what a wake-word upgrade would need.
 - **Goals & homework** — one list, filterable, with a hand-drawn
   checkmark instead of a system checkbox.
@@ -72,9 +72,9 @@ system in four small files.
 ## Project structure
 
 ```
-app/src/main/java/com/optimusprime/wick/
+app/src/main/java/com/optimusprime/orbit/
 ├── MainActivity.kt            entry point — just sets the theme + nav graph
-├── WickApplication.kt         holds the one AppContainer (manual DI, no Hilt)
+├── OrbitApplication.kt         holds the one AppContainer (manual DI, no Hilt)
 ├── AppContainer.kt
 ├── data/
 │   ├── db/                    Room entities, DAOs, the database itself
@@ -85,8 +85,8 @@ app/src/main/java/com/optimusprime/wick/
 │   └── VoiceCoordinator.kt    SpeechRecognizer + TextToSpeech wrapper
 └── ui/
     ├── theme/                 the whole design system: Color, Type, Shape, Theme
-    ├── components/            TimerDial, FlameIndicator, WeekBars, GoalRow, WickButton, WickCard, WickBottomBar
-    ├── nav/                   WickNavGraph.kt — five destinations, one bottom bar
+    ├── components/            TimerDial, FlameIndicator, WeekBars, GoalRow, OrbitButton, OrbitCard, OrbitBottomBar
+    ├── nav/                   OrbitNavGraph.kt — five destinations, one bottom bar
     └── screens/                permissions / home / session / goals / progress
 ```
 
@@ -110,7 +110,7 @@ the whole object graph in one file when a judge asks how it's wired.
 4. Run on a **real device** if you can — the camera + mic features
    are the whole point, and an emulator's virtual camera won't show a
    real face to ML Kit. Minimum Android 8.0 (API 26).
-5. On first launch, Wick asks for camera + microphone permission, then
+5. On first launch, Orbit asks for camera + microphone permission, then
    runs a 5-second "can the camera see you" check before handing you
    into the app. That check is the *only* time you'll see a live
    camera preview — during a real session there's no viewfinder, only
@@ -158,7 +158,7 @@ this pass — worth saying out loud rather than overclaiming:
   Firestore means writing a second implementation of that same
   interface and wiring it up in `AppContainer`, not touching any
   screen.
-- **No always-on "Hey Wick" wake word.** Voice is push-to-talk. A real
+- **No always-on "Hey Orbit" wake word.** Voice is push-to-talk. A real
   wake-word listener needs either a foreground service constantly
   running the mic (battery/privacy tradeoff) or an offline wake-word
   engine (Picovoice Porcupine, or Vosk) — both are a deliberate next
@@ -186,11 +186,11 @@ Matches the "Study Flow" from the pitch deck almost exactly:
 3. Let the timer run a few seconds, then physically get up and walk
    out of frame. Call out loud what should happen. ~8 seconds later,
    the timer visibly pauses on its own.
-4. Walk back into frame — Wick speaks the "welcome back" line.
+4. Walk back into frame — Orbit speaks the "welcome back" line.
    Tap Resume.
-5. Tap the mic, say "log a question" — Wick confirms out loud, counter
+5. Tap the mic, say "log a question" — Orbit confirms out loud, counter
    ticks up.
-6. Tap the mic again, say "status" — Wick reads back the elapsed time.
+6. Tap the mic again, say "status" — Orbit reads back the elapsed time.
 7. End the session, jump to **Goals**, check something off.
 8. **Progress** tab — the week's bar chart now has today's bar in it,
    plus whichever achievement just unlocked.

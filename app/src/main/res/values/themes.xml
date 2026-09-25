@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme used only for the window background before Compose takes over. -->
-    <style name="Theme.Wick" parent="android:Theme.Material.NoActionBar">
+    <style name="Theme.Orbit" parent="android:Theme.Material.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@color/ink</item>
         <item name="android:navigationBarColor">@color/ink</item>

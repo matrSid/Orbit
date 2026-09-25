@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.optimusprime.wick"
+    namespace = "com.optimusprime.orbit"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.optimusprime.wick"
+        applicationId = "com.optimusprime.orbit"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
