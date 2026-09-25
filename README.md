@@ -1,4 +1,4 @@
-# Wick — a study companion, not a countdown app
+# Orbit — a study companion, not a countdown app
 
 Built for **Bal Bharati Hackathon 3.0** (Team Optimus Prime) from the
 "Smart Study Tracker" idea: a study timer that pauses itself when you
