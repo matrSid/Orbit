@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mirrors ui/theme/Color.kt — kept here only for the pre-Compose window background. -->
+    <color name="ink">#171512</color>
+</resources>
